@@ -1,9 +1,7 @@
 #version 460
-#extension GL_EXT_nonuniform_qualifier : enable
+#extension GL_EXT_nonuniform_qualifier : require
 
-#ifdef GL_EXT_nonuniform_qualifier
 layout(set = 0, binding = 0) uniform sampler2D textures[];
-#endif
 
 struct MaterialGpuData
 {
@@ -19,20 +17,20 @@ struct MaterialGpuData
 	float mBumpScaling;
 	float mShininess;
 	float mShininessStrength;
-	
+
 	float mRefractionIndex;
 	float mReflectivity;
 	float mMetallic;
 	float mSmoothness;
-	
+
 	float mSheen;
 	float mThickness;
 	float mRoughness;
 	float mAnisotropy;
-	
+
 	vec4 mAnisotropyRotation;
 	vec4 mCustomData;
-	
+
 	int mDiffuseTexIndex;
 	int mSpecularTexIndex;
 	int mAmbientTexIndex;
@@ -45,7 +43,7 @@ struct MaterialGpuData
 	int mReflectionTexIndex;
 	int mLightmapTexIndex;
 	int mExtraTexIndex;
-	
+
 	vec4 mDiffuseTexOffsetTiling;
 	vec4 mSpecularTexOffsetTiling;
 	vec4 mAmbientTexOffsetTiling;
@@ -60,7 +58,7 @@ struct MaterialGpuData
 	vec4 mExtraTexOffsetTiling;
 };
 
-layout(set = 1, binding = 0) buffer Material 
+layout(set = 1, binding = 0) buffer Material
 {
 	MaterialGpuData materials[];
 } matSsbo;
@@ -72,23 +70,18 @@ layout (location = 3) flat in int materialIndex;
 
 layout (location = 0) out vec4 fs_out;
 
-void main() 
+void main()
 {
 	int matIndex = materialIndex;
 
 	int diffuseTexIndex = matSsbo.materials[matIndex].mDiffuseTexIndex;
-#ifdef GL_EXT_nonuniform_qualifier
 	vec3 color = texture(textures[diffuseTexIndex], texCoord).rgb;
-#else
-	vec3 color = vec3(0.5, 0.5, 0.5);
-#endif
 
-	
 	float ambient = 0.1;
 	vec3 diffuse = matSsbo.materials[matIndex].mDiffuseReflectivity.rgb;
 	vec3 toLight = normalize(vec3(1.0, 1.0, 0.5));
 	vec3 illum = vec3(ambient) + diffuse * max(0.0, dot(normalize(normalWS), toLight));
 	color *= illum;
-	
+
 	fs_out = vec4(color, 1.0);
 }
