@@ -144,4 +144,4 @@ jobs:
       - name: Build
         shell: bash
         working-directory: ${{ runner.workspace }}/${{ github.event.repository.name }}/build
-        run: cmake --build .
+        run: VULKAN_SDK=${{ env.vulkan_sdk }} cmake --build .
