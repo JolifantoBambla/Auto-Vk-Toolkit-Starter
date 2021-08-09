@@ -149,7 +149,7 @@ jobs:
 
           cmake `
             -DCMAKE_BUILD_TYPE=$BUILD_TYPE `
-            -DCMAKE_CXX_FLAGS=/bigobj /EHsc`
+            -DCMAKE_CXX_FLAGS="/bigobj /EHsc" `
             ${{ runner.workspace }}/${{ github.event.repository.name }} -G "Visual Studio 16 2019" -A x64
 
       - name: Build
