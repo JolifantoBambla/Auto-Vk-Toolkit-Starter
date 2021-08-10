@@ -32,7 +32,7 @@ Make sure you have installed [CMake tools for Visual Studio](https://docs.micros
 Open the directory which contains your project with Visual Studio, wait for Visual Studio to run the `CMake` configuration and then select `Gears_Vk_Starter.exe`/`<Your Project Name>.exe` as `Startup Item` and run it by pressing the "play" button.
 
 ## Handling Dependencies
-*Gears-Vk-Starter* projects are not configured to use the [Post Build Helper](https://github.com/cg-tuwien/Gears-Vk), but use CMake to do the same things.
+*Gears-Vk-Starter* projects are not configured to use the [Post Build Helper](https://github.com/cg-tuwien/Gears-Vk/tree/master/visual_studio#post-build-helper), but use CMake to do the same things.
 
 There are two special directories in this project for which special actions are configured for the executable: `<project root>/shaders` and `<project root>/assets`
 In your source code you can treat them as if these directories were in the same location as your executable.
