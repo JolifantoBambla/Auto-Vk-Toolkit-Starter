@@ -23,9 +23,10 @@ target_link_libraries(${PROJECT_NAME} PUBLIC Gears_Vk)
 # Assets
 include(${Gears_Vk_SOURCE_DIR}/cmake/post_build_helper/add_post_build_commands.cmake)
 
+get_target_property(gvkStarter_BINARY_DIR ${PROJECT_NAME} BINARY_DIR)
 add_post_build_commands(${PROJECT_NAME}
     ${PROJECT_SOURCE_DIR}/shaders
-    $<TARGET_FILE_DIR:${PROJECT_NAME}>/shaders
+    ${gvkStarter_BINARY_DIR}/shaders
     $<TARGET_FILE_DIR:${PROJECT_NAME}>/assets
     "${PROJECT_SOURCE_DIR}/assets"
     ${gvkStarter_CreateDependencySymlinks})
