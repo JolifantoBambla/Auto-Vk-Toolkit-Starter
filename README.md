@@ -1,5 +1,5 @@
 # Gears-Vk-Starter
-A template for [Gears-Vk](https://github.com/cg-tuwien/Gears-Vk) projects using CMake as build system.
+A template for cross-platform [Gears-Vk](https://github.com/cg-tuwien/Gears-Vk) projects using CMake as build system.
 
 *Gears-Vk* is a rendering framework for the Vulkan 1.2 API, implemented in modern C++, using C++17 and C++20 features.     
 It aims to hit the sweet spot between programmer-convenience and efficiency while still supporting full Vulkan functionality.
