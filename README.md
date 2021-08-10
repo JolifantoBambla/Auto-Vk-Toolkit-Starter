@@ -9,7 +9,7 @@ Then simply clone your newly created project.
 
 ### Install dependencies
 * A [Vulkan 1.1 SDK](https://vulkan.lunarg.com/sdk/home) or newer
-* A C++20 compiler (GCC and MSVC are currently supported)
+* A C++20 compiler (GCC, Clang and MSVC are currently supported)
 * [CMake 3.13](https://cmake.org/) or newer
 
 ## Build & Run
