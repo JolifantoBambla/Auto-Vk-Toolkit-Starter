@@ -1,5 +1,8 @@
 # Gears-Vk-Starter
-A template for [Gears-Vk](https://github.com/cg-tuwien/Gears-Vk) projects.
+A template for cross-platform [Gears-Vk](https://github.com/cg-tuwien/Gears-Vk) projects using CMake as build system.
+
+*Gears-Vk* is a rendering framework for the Vulkan 1.2 API, implemented in modern C++, using C++17 and C++20 features.     
+It aims to hit the sweet spot between programmer-convenience and efficiency while still supporting full Vulkan functionality.
 
 ## Setup
 
@@ -9,7 +12,7 @@ Then simply clone your newly created project.
 
 ### Install dependencies
 * A [Vulkan 1.1 SDK](https://vulkan.lunarg.com/sdk/home) or newer
-* A C++20 compiler (GCC and MSVC are currently supported)
+* A C++20 compiler (GCC, Clang and MSVC are currently supported)
 * [CMake 3.13](https://cmake.org/) or newer
 
 ## Build & Run
@@ -29,6 +32,8 @@ Make sure you have installed [CMake tools for Visual Studio](https://docs.micros
 Open the directory which contains your project with Visual Studio, wait for Visual Studio to run the `CMake` configuration and then select `Gears_Vk_Starter.exe`/`<Your Project Name>.exe` as `Startup Item` and run it by pressing the "play" button.
 
 ## Handling Dependencies
+*Gears-Vk-Starter* projects are not configured to use the [Post Build Helper](https://github.com/cg-tuwien/Gears-Vk/tree/master/visual_studio#post-build-helper), but use CMake to do the same things.
+
 There are two special directories in this project for which special actions are configured for the executable: `<project root>/shaders` and `<project root>/assets`
 In your source code you can treat them as if these directories were in the same location as your executable.
 Even more so: you can treat all GLSL shaders as if they were already compiled to SPIR-V binaries.
