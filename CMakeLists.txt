@@ -1,7 +1,12 @@
 cmake_minimum_required(VERSION 3.13)
 project(Gears_Vk_Starter)
 
-set(CMAKE_CXX_STANDARD 20)
+if (MSVC)
+    # <ranges> support requires /std:c++latest on MSVC
+    set(CMAKE_CXX_STANDARD 23)
+else (MSVC)
+    set(CMAKE_CXX_STANDARD 20)
+endif (MSVC)
 
 include(FetchContent)
 
