@@ -21,8 +21,8 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 
 if (MSVC)
     target_compile_options(${PROJECT_NAME}
-        ${gvk_SourceScope} "/bigobj"
-        ${gvk_SourceScope} "/MP")
+        PUBLIC "/bigobj"
+        PUBLIC "/MP")
 endif (MSVC)
 
 # Dependencies
