@@ -3,7 +3,7 @@ name: "Build (GCC/Clang/MSVC)"
 on:
   push:
     branches:
-      - 'master'
+      - 'main'
     paths:
       - 'cmake/**'
       - 'shaders/**'
