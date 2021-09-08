@@ -19,6 +19,12 @@ add_executable(${PROJECT_NAME}
 target_include_directories(${PROJECT_NAME} PUBLIC
     include/)
 
+if (MSVC)
+    target_compile_options(${PROJECT_NAME}
+        ${gvk_SourceScope} "/bigobj"
+        ${gvk_SourceScope} "/MP")
+endif (MSVC)
+
 # Dependencies
 ## Gears-Vk
 include(cmake/gvk.cmake)
