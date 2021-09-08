@@ -3,7 +3,6 @@ cmake_minimum_required(VERSION 3.14)
 include(FetchContent)
 
 set(avk_UseVMA ON)
-add_compile_definitions(AVK_USE_VMA)
 if (UNIX)
     add_compile_definitions(GVK_CMAKE_BUILD)
 endif(UNIX)
