@@ -7,7 +7,7 @@ set(avk_UseVMA ON)
 FetchContent_Declare(
     gvk
     GIT_REPOSITORY      https://github.com/cg-tuwien/Gears-Vk.git
-    GIT_TAG             gcc
+    GIT_TAG             master
     GIT_SUBMODULES      "auto_vk"
 )
 
