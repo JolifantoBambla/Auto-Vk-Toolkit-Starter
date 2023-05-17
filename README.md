@@ -1,13 +1,13 @@
-# Gears-Vk-Starter
-A template for cross-platform [Gears-Vk](https://github.com/cg-tuwien/Gears-Vk) projects using CMake as build system.
+# Auto-Vk-Toolkit-Starter
+A template for cross-platform [Auto-Vk-Toolkit](https://github.com/cg-tuwien/Auto-Vk-Toolkit) projects using CMake as build system.
 
-*Gears-Vk* is a rendering framework for the Vulkan 1.2 API, implemented in modern C++, using C++17 and C++20 features.     
+*Auto-Vk-Toolkit* is a rendering framework for the Vulkan 1.2 API, implemented in modern C++, using C++17 and C++20 features.     
 It aims to hit the sweet spot between programmer-convenience and efficiency while still supporting full Vulkan functionality.
 
 ## Setup
 
 ### Use this template
-Click on the [Button](https://github.com/lHerzberger/Gears-Vk-Starter/generate) near the top of the page to generate your own project using this template.
+Click on the [Button](https://github.com/lHerzberger/Auto-Vk-Toolkit-Starter/generate) near the top of the page to generate your own project using this template.
 Then simply clone your newly created project.
 
 ### Install dependencies
@@ -23,7 +23,7 @@ Within the directory to which you cloned your project and run the following comm
 mkdir build
 cd build
 cmake .. && make
-./Gears-Vk-Starter
+./Auto-Vk-Toolkit-Starter
 ```
 
 ### Windows/Visual Studio 2019
@@ -32,7 +32,7 @@ Make sure you have installed [CMake tools for Visual Studio](https://docs.micros
 Open the directory which contains your project with Visual Studio, wait for Visual Studio to run the `CMake` configuration and then select `Gears_Vk_Starter.exe`/`<Your Project Name>.exe` as `Startup Item` and run it by pressing the "play" button.
 
 ## Handling Dependencies
-*Gears-Vk-Starter* projects are not configured to use the [Post Build Helper](https://github.com/cg-tuwien/Gears-Vk/tree/master/visual_studio#post-build-helper), but use CMake to do the same things.
+*Auto-Vk-Toolkit-Starter* projects are not configured to use the [Post Build Helper](https://github.com/cg-tuwien/Auto-Vk-Toolkit/tree/master/visual_studio#post-build-helper), but use CMake to do the same things.
 
 There are two special directories in this project for which special actions are configured for the executable: `<project root>/shaders` and `<project root>/assets`
 In your source code you can treat them as if these directories were in the same location as your executable.
@@ -46,7 +46,7 @@ E.g. by reloading the CMake project or by temporarily adding a `message()` call 
 For all files and directories in the `<project root>/assets` symbolic links will be created in `<dir containing executable>/assets`.
 Assets are copied as a post build actions. Like with the shaders you'll need to trigger a CMake reconfiguration to make it recognize and configure post build actions for new assets.
 
-On Windows, symbolic links are also created for all DLLs required by **Gears-Vk** in the same manner.
+On Windows, symbolic links are also created for all DLLs required by **Auto-Vk-Toolkit** in the same manner.
 Use the CMake option `gvk_ReleaseDLLsOnly` to enforce the use of release DLLs even in debug builds.
 
 ### Publishing your project
@@ -55,9 +55,9 @@ If you want to project, you can configure the post build actions to copy depende
 ## Found a bug?
 If you found a bug in the template (i.e. in the provided `src/main.cpp`, the `CMake` or GitHub workflow files) please open an issue directly in the template project.
 
-However, if the bug you found is in [Gears-Vk](https://github.com/cg-tuwien/Gears-Vk), please create the issue directly over there.
+However, if the bug you found is in [Auto-Vk-Toolkit](https://github.com/cg-tuwien/Auto-Vk-Toolkit), please create the issue directly over there.
 
 ## See also
 * [Auto-Vk](https://github.com/cg-tuwien/Auto-Vk): A low-level convenience and productivity layer atop [Vulkan-Hpp](https://github.com/KhronosGroup/Vulkan-Hpp).
-* [Gears-Vk](https://github.com/cg-tuwien/Gears-Vk): A larger real-time rendering framework built on top of [Auto-Vk](https://github.com/cg-tuwien/Auto-Vk).
+* [Auto-Vk-Toolkit](https://github.com/cg-tuwien/Auto-Vk-Toolkit): A larger real-time rendering framework built on top of [Auto-Vk](https://github.com/cg-tuwien/Auto-Vk).
 

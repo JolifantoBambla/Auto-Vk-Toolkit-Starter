@@ -25,11 +25,12 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - {
-            name: "linux: clang",
-            cc: "clang",
-            cxx: "clang++"
-          }
+          # clang is currently not supported by Auto-Vk-Toolkit
+          #- {
+          #  name: "linux: clang",
+          #  cc: "clang",
+          #  cxx: "clang++"
+          #}
           - {
             name: "linux: gcc",
             cc: "gcc-10",

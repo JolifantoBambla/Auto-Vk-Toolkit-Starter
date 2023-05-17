@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.13)
-project(Gears_Vk_Starter)
+project(Auto_Vk_Toolkit_Starter)
 
 if (MSVC)
     # <ranges> support requires /std:c++latest on MSVC
@@ -10,7 +10,7 @@ endif (MSVC)
 
 include(FetchContent)
 
-option(gvkStarter_CreateDependencySymlinks
+option(autoVkToolkitStarter_CreateDependencySymlinks
         "Create symbolic links instead of copying dependencies of examples, i.e. DLLs (Windows only) & assets."
         ON)
 
@@ -20,18 +20,18 @@ target_include_directories(${PROJECT_NAME} PUBLIC
     include/)
 
 # Dependencies
-## Gears-Vk
-include(cmake/gvk.cmake)
-target_include_directories(${PROJECT_NAME} PUBLIC Gears_Vk)
-target_link_libraries(${PROJECT_NAME} PUBLIC Gears_Vk)
+## Auto-Vk-Toolkit
+include(cmake/Auto-Vk-Toolkit.cmake)
+target_include_directories(${PROJECT_NAME} PUBLIC Auto_Vk_Toolkit)
+target_link_libraries(${PROJECT_NAME} PUBLIC Auto_Vk_Toolkit)
 
 # Assets
-include(${Gears_Vk_SOURCE_DIR}/cmake/post_build_helper/add_post_build_commands.cmake)
+include(${Auto_Vk_Toolkit_SOURCE_DIR}/cmake/post_build_helper/add_post_build_commands.cmake)
 
-get_target_property(gvkStarter_BINARY_DIR ${PROJECT_NAME} BINARY_DIR)
+get_target_property(autoVkToolkitStarter_BINARY_DIR ${PROJECT_NAME} BINARY_DIR)
 add_post_build_commands(${PROJECT_NAME}
     ${PROJECT_SOURCE_DIR}/shaders
-    ${gvkStarter_BINARY_DIR}/shaders
+    ${autoVkToolkitStarter_BINARY_DIR}/shaders
     $<TARGET_FILE_DIR:${PROJECT_NAME}>/assets
     "${PROJECT_SOURCE_DIR}/assets"
-    ${gvkStarter_CreateDependencySymlinks})
+    ${autoVkToolkitStarter_CreateDependencySymlinks})
