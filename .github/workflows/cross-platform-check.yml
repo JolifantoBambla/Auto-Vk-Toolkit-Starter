@@ -150,7 +150,7 @@ jobs:
 
           cmake `
             -DCMAKE_BUILD_TYPE=$BUILD_TYPE `
-            ${{ runner.workspace }}/${{ github.event.repository.name }} -G "Visual Studio 16 2019" -A x64
+            ${{ runner.workspace }}/${{ github.event.repository.name }} -G "Visual Studio 17 2022" -A x64
 
       - name: Build
         shell: bash
